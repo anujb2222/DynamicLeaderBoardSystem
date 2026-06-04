@@ -37,4 +37,4 @@ A full-stack web application that includes:
 
 ---
 
-## 📁 Project Structure
+
