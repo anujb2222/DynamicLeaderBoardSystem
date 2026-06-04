@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Leaderboard - Login</title>
+    <link rel="icon" href="../OtherFiles/Images/favicon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/login.css"> 
+</head>
+<body>
+    <h1>Login</h1>
+    <form id="login-form">
+        <input type="email" id="email" placeholder="Enter Email" required>
+        <input type="password" id="password" placeholder="Enter Password" required>
+        <button type="submit">Login</button>
+        <p>Don't have an account? <a href="register.html">Register here</a></p>
+    </form>
+    <div id="feedback-message"></div>
+    
+
+    <script>
+      document.getElementById('login-form').addEventListener('submit', async function(event) {
+          event.preventDefault();
+          const email = document.getElementById('email').value;
+          const password = document.getElementById('password').value;
+
+          const response = await fetch('http://localhost:3000/login', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ email, password })
+          });
+
+          if (response.ok) {
+              const data = await response.json();
+              localStorage.setItem('token', data.token); 
+              window.location.href = 'games.html'; 
+          } else {
+              document.getElementById('feedback-message').innerText = 'Login failed. Please try again.';
+          }
+      });
+    </script>
+</body>
+</html>

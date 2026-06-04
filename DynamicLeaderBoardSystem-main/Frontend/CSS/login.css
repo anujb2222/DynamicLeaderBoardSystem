@@ -1,0 +1,51 @@
+body {
+   font-family: Arial, sans-serif;
+   background-image: url('../../OtherFiles/Images/login.jpg');
+   background-size: cover; /* Changed to cover for full body background */
+   background-repeat: no-repeat; /* Prevents body background from repeating */
+   height: 100vh;
+}
+
+h1 {
+   text-align: center;
+   color:aliceblue;
+   background-color: #e25555;
+   padding: 2%
+}
+
+form,
+#score-submission { /* Added styling for score submission form */
+   max-width: 410px;
+   margin: auto;
+   padding: 21px;
+   background-color: white;
+   border-radius: 8px;
+   box-shadow: 0 2px 10px rgba(255, 48, 245, 0.1);
+   
+  
+}
+
+input,
+button { 
+   width: calc(100% - 20px);
+   padding: 10px;
+   margin-bottom: 15px;
+}
+
+button { 
+   background-color: #e25555; /* Primary color */
+   color: white;
+   border-radius: 5px;
+   cursor:pointer; 
+}
+
+button:hover { 
+   background-color:#e25555; /* Darker shade on hover */
+   
+}
+
+#feedback-message { 
+   text-align:center; 
+   color:rgb(240, 240, 240); /* Error message color */
+   font-size: large;
+}
